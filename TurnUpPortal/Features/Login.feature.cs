@@ -111,7 +111,7 @@ this.ScenarioInitialize(scenarioInfo);
  await testRunner.WhenAsync("User opens the url \"http://horse.industryconnect.io/\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 11
- await testRunner.AndAsync("Enter the valid username \"Hari\" and password \"123123\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+ await testRunner.AndAsync("Enter the valid username \"hari\" and password \"123123\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 12
  await testRunner.AndAsync("Click the Login button", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");

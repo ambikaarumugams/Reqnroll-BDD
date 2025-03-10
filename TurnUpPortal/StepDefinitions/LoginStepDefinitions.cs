@@ -7,13 +7,12 @@ using TurnUpPortal.Pages;
 public class LoginStepDefinitions
 {
     private  IWebDriver driver;
-    private  LoginPage loginPage;
+    public LoginPage loginPage;
 
     [Given("User launch the Chrome browser")]
     public void GivenUserLaunchTheChromeBrowser()
     {
         driver = new ChromeDriver();
-        loginPage = new LoginPage(driver);
     }
 
     [When("User opens the url {string}")]
@@ -26,12 +25,14 @@ public class LoginStepDefinitions
     [When("Enter the valid username {string} and password {string}")]
     public void WhenEnterTheValidUsernameAndPassword(string username, string password)
     {
+        loginPage = new LoginPage(driver);
         loginPage.EnterUserNamePassword(username, password);
     }
 
     [When("Click the Login button")]
     public void WhenClickTheLoginButton()
     {
+        loginPage = new LoginPage(driver);
         loginPage.ClickLoginButton();
     }
 
@@ -39,6 +40,7 @@ public class LoginStepDefinitions
     [Then("User should be logged in successfully")]
     public void ThenUserShouldBeLoggedInSuccessfully()
     {
+        loginPage = new LoginPage(driver);
         string successfulMsg = loginPage.GetLoginText();
         Assert.That(successfulMsg == "Hello hari!", "Actual and expected don't match");
     }

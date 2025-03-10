@@ -76,8 +76,15 @@ namespace TurnUpPortal.Pages
 
         public void ClickGoToLastPageButton()
         {
-            Wait.WaitToBeClickable(driver, "XPath", "//span[@class='k-icon k-i-seek-e']", 5);
-            goToLastPageButton.Click();
+            try
+            {
+                Wait.WaitToBeClickable(driver, "XPath", "//span[@class='k-icon k-i-seek-e']", 5);
+                goToLastPageButton.Click();
+            }
+            catch(NoSuchElementException e)
+            {
+                Console.WriteLine($"Unable to locate the element:{e.Message}");
+            }
         }
 
         public string GetNewCode()
@@ -164,7 +171,6 @@ namespace TurnUpPortal.Pages
             EditCodeTextBox(code);
             EditDescriptionTextBox(description);
             ClickSave();
-            ClickGoToLastPageButton();
         }
 
         //Delete the last record from the last page
@@ -221,7 +227,6 @@ namespace TurnUpPortal.Pages
             ClickGoToLastPageButton();
             ClickDeleteButton();
             ClickAlert();
-            ClickGoToLastPageButton();
         } 
     }
 }

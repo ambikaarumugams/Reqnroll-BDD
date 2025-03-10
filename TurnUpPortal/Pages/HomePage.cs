@@ -21,8 +21,6 @@ namespace TurnUpPortal.Pages
         //Click on Administration link
         public void ClickAdminLink()
         {
-            var x = new Wait();
-
             Wait.WaitToBeClickable(driver, "XPath", "//a[normalize-space()='Administration']", 5);
             administrationTab.Click();
         }
