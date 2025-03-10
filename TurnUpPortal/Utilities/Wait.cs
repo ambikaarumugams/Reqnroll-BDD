@@ -41,6 +41,7 @@ namespace TurnUpPortal.Utilities
             {
                 wait.Until(ExpectedConditions.ElementIsVisible(By.LinkText(locatorValue)));
             }
-        }
+        } 
+ 
     }
 }

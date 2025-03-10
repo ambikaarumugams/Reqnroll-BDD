@@ -9,7 +9,7 @@ namespace TurnUpPortal.Utilities
     {
         public static IWebDriver driver;
 
-        [SetUp]
+        [BeforeScenario]
         public void SetUpSteps()
         {
             //Open the chrome browser
@@ -20,7 +20,7 @@ namespace TurnUpPortal.Utilities
             driver.Manage().Window.Maximize();
         }
 
-        [TearDown]
+        [AfterScenario]
         public void CloseTestRun()
         {
           //  driver.Quit();

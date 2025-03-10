@@ -47,12 +47,10 @@ namespace TurnUpPortal.Pages
             return loginSuccessfulMsg.Text;
         }
 
-        //Combined all methods
-        public void Login(string username, string password)
+        public void EnterUserNamePassword(string username, string password)
         {
             EnterUserName(username);
             EnterPassword(password);
-            ClickLoginButton();
         }
     }
 }

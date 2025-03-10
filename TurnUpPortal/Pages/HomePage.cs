@@ -21,10 +21,11 @@ namespace TurnUpPortal.Pages
         //Click on Administration link
         public void ClickAdminLink()
         {
+            var x = new Wait();
+
             Wait.WaitToBeClickable(driver, "XPath", "//a[normalize-space()='Administration']", 5);
             administrationTab.Click();
         }
-
 
         //Click on Tim&Materials link
         public void ClickTimeAndMaterialsLink()
@@ -44,10 +45,7 @@ namespace TurnUpPortal.Pages
         {
             administrationTab.Click();
             timeAndMaterialsLink.Click();
-           
         }
     }
-
-
 }
 
